@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+DevPack: Developmental Pack for unRAID Plugin
+DevPack:
+DevPack: unRAID plugin wrapper for extra packages, mostly CLI, for advanced
+DevPack: users.  Use at your own risk. Not officially supported by LimeTech.
+DevPack: 
+DevPack: Supports: apr, apt-util, bwm-ng, cpio, git, iftop, inotify, iotop,
+DevPack: iperf, kbd, lftp, lshw, neon, p7zip, perl, python, readline, screen,
+DevPack: sshfs-fuse, strace, subversion, unrar, utempter, vim
+DevPack: 
+DevPack: https://github.com/dmacias72/unRAID-DevPack
+DevPack: 
