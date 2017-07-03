@@ -8,9 +8,9 @@
          |-----handy-ruler------------------------------------------------------|
 DevPack: Developmental Pack for unRAID Plugin
 DevPack:
-DevPack: unRAID plugin wrapper for dev packages, mostly CLI, for advanced
-DevPack: users.  Use at your own risk. Not officially supported by LimeTech.
-DevPack:
+DevPack: unRAID plugin wrapper for dev packages, mostly for advanced
+DevPack: users to compile packages.  Use at your own risk.
+DevPack: Not officially supported by LimeTech.
 DevPack:
 DevPack: https://github.com/dmacias72/unRAID-DevPack
 DevPack:
