@@ -116,11 +116,11 @@ foreach ($pkg_cfg as $pkg_name => $pkg_pref) { // get preferences for each packa
             $pkg_cmd = 'installpkg '.$pkg_path.$pkg_name.'* 2>&1';
         }
 
-    } else if ($pkg_pref == 'no' && $pkg_install_status) {
+    } else if ($pkg_pref == 'no' && $pkg_download_status) {
         if($plugins){
             logger("$pkg_name in use by another plugin, not uninstalled.",$argq);
         }else{
-            $pkg_msg = 'deleting, reboot to remove or reset';
+            $pkg_msg = 'deleting, reboot to reset';
             $pkg_cmd = 'rm '.$pkg_path.$pkg_name.'* 2>&1';
         }
     }
