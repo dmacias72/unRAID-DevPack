@@ -12,20 +12,18 @@ Usage: devmanager [options]
   -d, --download   download missing packages selected
   -r, --delete     delete packages not selected
   -q, --quiet      supress all packages progress
-  -u, --uninstall  uninstall packages not selected
       --help       display this help and exit
       --version    output version information and exit
       --debug      turn on debugging
 
 EOF;
 
-$shortopts = "dqu";
+$shortopts = "dq";
 $longopts = [
     "debug",
     "download",
     "help",
     "quiet",
-    "uninstall",
     "version"
 ];
 $args = getopt($shortopts, $longopts);
@@ -42,7 +40,6 @@ if (array_key_exists("version", $args)) {
 
 $argd = (array_key_exists("d", $args) || array_key_exists("download", $args));
 $argq = (array_key_exists("q", $args) || array_key_exists("quiet", $args));
-$argu = (array_key_exists("u", $args) || array_key_exists("uninstall", $args));
 $debug = array_key_exists("debug", $args);
 
 require_once '/usr/local/emhttp/plugins/DevPack/include/DevPackHelpers.php';
@@ -114,14 +111,17 @@ foreach ($pkg_cfg as $pkg_name => $pkg_pref) { // get preferences for each packa
         if (!$pkg_install_status) { // if package is not installed
             $pkg_msg = 'Installing';
             $pkg_cmd = 'upgradepkg --install-new '.$pkg_path.$pkg_name.'* 2>&1';
+        }else{
+            $pkg_msg = 'Installing';
+            $pkg_cmd = 'installpkg '.$pkg_path.$pkg_name.'* 2>&1';
         }
 
-    } else if ($pkg_pref == 'no' && $pkg_install_status && $argu) {
+    } else if ($pkg_pref == 'no' && $pkg_install_status) {
         if($plugins){
             logger("$pkg_name in use by another plugin, not uninstalled.",$argq);
         }else{
-            $pkg_msg = 'Uninstalling and deleting';
-            $pkg_cmd = 'removepkg '.$pkg_path.$pkg_name.'* 2>&1; rm '.$pkg_path.$pkg_name.'* 2>&1';
+            $pkg_msg = 'deleting, reboot to remove or reset';
+            $pkg_cmd = 'rm '.$pkg_path.$pkg_name.'* 2>&1';
         }
     }
 
