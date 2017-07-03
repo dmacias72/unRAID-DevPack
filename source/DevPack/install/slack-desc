@@ -8,12 +8,9 @@
          |-----handy-ruler------------------------------------------------------|
 DevPack: Developmental Pack for unRAID Plugin
 DevPack:
-DevPack: unRAID plugin wrapper for extra packages, mostly CLI, for advanced
+DevPack: unRAID plugin wrapper for dev packages, mostly CLI, for advanced
 DevPack: users.  Use at your own risk. Not officially supported by LimeTech.
-DevPack: 
-DevPack: Supports: apr, apt-util, bwm-ng, cpio, git, iftop, inotify, iotop,
-DevPack: iperf, kbd, lftp, lshw, neon, p7zip, perl, python, readline, screen,
-DevPack: sshfs-fuse, strace, subversion, unrar, utempter, vim
-DevPack: 
+DevPack:
+DevPack:
 DevPack: https://github.com/dmacias72/unRAID-DevPack
-DevPack: 
+DevPack:
