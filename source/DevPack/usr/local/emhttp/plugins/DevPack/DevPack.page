@@ -20,6 +20,7 @@ Title="Dev Pack"
             <th class="filter-downloaded" data-placeholder="by download"> Downloaded </th>
             <th class="filter-installed" data-placeholder="by install"> Installed </th>
             <th class="filter-plugins" data-placeholder="Search..."> Plugins </th>
+            <th class="parser-false filter-false"><input id="checkall" type="checkbox"></th>
         </tr>
     </thead>
     <tbody>
