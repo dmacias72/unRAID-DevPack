@@ -1,7 +1,7 @@
 # unRAID 6.1+
 unRAID DevPack plugin and packages
 
-Collection of packages for unRAID.
+Collection of packages for compiling packages for unRAID.
 
 
 
