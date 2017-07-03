@@ -18,18 +18,6 @@ $(function(){
         }
     });
 
-    // "uninstall package" switch and cookie
-    $('#uninstallpkg')
-        .switchButton({
-            labels_placement: 'right',
-            on_label: 'unInstall On',
-            off_label: 'unInstall Off',
-            checked: $.cookie('devpack_packages_uninstall') == '--uninstall'
-        })
-        .change(function () {
-            $.cookie('devpack_packages_uninstall', $('#uninstallpkg')[0].checked ? '--uninstall' : '', { expires: 3650 });
-        });
-
     // select all packages switch
     $('#checkall')
         .switchButton({
@@ -101,8 +89,6 @@ function packageQuery(force) {
             })
             .change(function() {
                 $(this).parent().parent().find('.pkgvalue').val(this.checked ? "yes": "no");
-                if (this.checked)
-                    checkDepends();
                 $('#btnApply').prop("disabled", false);
             });
 
@@ -138,26 +124,9 @@ function packageQuery(force) {
 }
 
 function Apply() {
-        checkDepends();
-        var Arg2 = (typeof $.cookie('devpack_packages_uninstall') === 'undefined') ? '' : '&arg2='+$.cookie('devpack_packages_uninstall');
         $.post('/update.php', $('#package_form').serializeArray(), function() {
-                openBox('/plugins/DevPack/scripts/devmanager&arg1=--download'+ Arg2,
+                openBox('/plugins/DevPack/scripts/devmanager&arg1=--download',
                             'Dev Package Manager', 600, 900, true);
             }
         );
-}
-
-function checkDepends() {
-    if ($('#screen')[0].checked) {
-        $('#utempter').switchButton({checked: true});
-        $('#utempter', '.pkgvalue').val('yes');
-    }
-    if ($('#iotop')[0].checked) {
-        $('#python').switchButton({checked: true});
-        $('#python', '.pkgvalue').val('yes');
-    }
-    if ($('#vim')[0].checked) {
-        $('#perl').switchButton({checked: true});
-        $('#perl', '.pkgvalue').val('yes');
-    }
 }
