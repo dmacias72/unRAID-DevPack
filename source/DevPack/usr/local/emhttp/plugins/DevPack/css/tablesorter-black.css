@@ -32,3 +32,6 @@
 .tablesorter tr.even > td {
     background-color: #1b1d1b;
 }
+.tablesorter-headerRow {
+    background-color: #1b1d1b;
+}
