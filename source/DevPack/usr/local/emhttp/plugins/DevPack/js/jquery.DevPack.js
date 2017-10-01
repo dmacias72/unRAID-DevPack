@@ -4,8 +4,9 @@ $(function(){
         sortList: [[0,0]],
         widgets: ['saveSort', 'filter', 'stickyHeaders', 'zebra'],
         widgetOptions: {
-            stickyHeaders_filteredToTop: false,
-            //stickyHeaders_yScroll: $('.page_devpack'),
+            stickyHeaders_filteredToTop: true,
+            stickyHeaders_attachTo: null,
+            stickyHeaders_offset: ($('#header').css("position") === "fixed") ? '90' : '0',
             filter_hideEmpty: true,
             filter_liveSearch: true,
             filter_saveFilters: true,
@@ -19,7 +20,7 @@ $(function(){
     });
 
     // select all packages switch
-    $('#checkall')
+    $('.checkall')
         .switchButton({
             labels_placement: 'right',
             on_label: 'Select All',
@@ -47,24 +48,32 @@ function packageQuery(force) {
         var len = data.packages.length, i = 0;
         for (i; i < len; i++) {
             var Update;
-            if (data.packages[i].downloadeq == data.packages[i].downloaded && data.packages[i].installeq == data.packages[i].installed){
-                Update = "<span><i class='uptodate fa fa-check'></i> up-to-date </span>";
+            var Downloaded = data.packages[i].downloaded;
+            var DownloadEQ = data.packages[i].downloadeq;
+            var Installed  = data.packages[i].installed;
+            var InstallEQ  = data.packages[i].installeq;
+            if (DownloadEQ == Downloaded && InstallEQ == Installed){
+                if (Installed == "yes"){
+                    if (Downloaded == "no")
+                        Update = "<span ><i class='installed fa fa-check-circle'></i> installed</span>";
+                    else
+                        Update = "<span><i class='uptodate fa fa-check'></i> up-to-date </span>";
+                }else{
+                    Update = "<span><i class='uninstalled fa fa-info-circle'></i> uninstalled </span>";
+                }
             }else{
                 Update = "<span ><a class='update'><i class='updateready fa fa-cloud-download'></i> update ready </a></span>";
                 Ready = true;
             }
 
-            var Downloaded = data.packages[i].downloaded;
-            if (data.packages[i].downloadeq != data.packages[i].downloaded)
+            if (DownloadEQ != Downloaded)
                 Downloaded = 'old';
 
-            var Installed = data.packages[i].installed;
-
             var Checked = "";
-            if (data.packages[i].config=="yes"){
+            if (data.packages[i].config == "yes"){
                 Checked = "checked";
                 Count++;
-            }
+           }
 
             $('#tblPackages tbody').append("<tr>"+
             "<td class='package' title='"+data.packages[i].desc+"'>"+data.packages[i].name+"</td>"+ // package name
