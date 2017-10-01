@@ -1,16 +1,13 @@
 /* header */
 .tablesorter .headerSortUp,
 .tablesorter .tablesorter-headerSortUp,
-.tablesorter .tablesorter-headerAsc {
-    background-color:#e4e2e4;
-}
+.tablesorter .tablesorter-headerAsc,
 .tablesorter .headerSortDown,
 .tablesorter .tablesorter-headerSortDown,
-.tablesorter .tablesorter-headerDesc {
-    background-color:#e4e2e4;
-}
-/* filter widget */
-.tablesorter .tablesorter-filter-row {
+.tablesorter .tablesorter-headerDesc,
+.tablesorter .tablesorter-filter-row,
+.tablesorter-headerRow,
+.tablesorter tr.even > td {
     background-color: #e4e2e4;
 }
 
@@ -28,10 +25,4 @@
 /* Zebra Widget - row alternating colors */
 .tablesorter tr.odd > td {
     background-color: #F0F0F0;
-}
-.tablesorter tr.even > td {
-    background-color: #e4e2e4;
-}
-.tablesorter-headerRow {
-    background-color: #e4e2e4;
 }
