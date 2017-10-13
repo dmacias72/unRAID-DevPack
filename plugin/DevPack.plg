@@ -17,6 +17,10 @@
 
 <CHANGES>
 ##&name;
+###2017.10.12
+- fix libunistring package, include symlink for libunistring.so.0
+- added full glibc package
+- removed everything but headers for all preinstalled unRAID packages
 ###2017.10.01b
 - fix stickyheaders for new themes
 - update tablesorter to 2.29.0
