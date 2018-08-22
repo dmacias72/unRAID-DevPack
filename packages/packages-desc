@@ -33,6 +33,7 @@
  "openssl":"Secure Sockets Layer toolkit",
  "pcre":"Perl-compatible regular expression library",
  "pkg-config":"system for managing library compile and link flags",
+ "ruby":"an interpreted scripting language for quick and easy object-oriented programming.",
  "sqlite":"simple self contained database engine",
  "tcl":"Tool Command Language",
  "tclx":"Extended Tool Command Language",
