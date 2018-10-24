@@ -2,10 +2,10 @@ Icon="DevPack.png"
 Menu="UserPreferences"
 Title="Dev Pack"
 ---
-<link type="text/css" rel="stylesheet" href="/plugins/DevPack/css/tablesorter.css">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/DevPack/css/tablesorter.css');?>">
 <link type="text/css" rel="stylesheet" href="/plugins/DevPack/css/tablesorter-<?=($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'white' : 'black';?>.css">
-<link type="text/css" rel="stylesheet" href="/webGui/styles/jquery.switchbutton.css">
-<link type="text/css" rel="stylesheet" href="/plugins/DevPack/css/DevPack.css">
+<link type="text/css" rel="stylesheet" href="<?=autov('/webGui/styles/jquery.switchbutton.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/DevPack/css/DevPack.css');?>">
 <style>
 table.tablesorter tbody tr:nth-child(odd) {
     background-color: #<?=($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'F0F0F0' : '212421';?>;
@@ -40,7 +40,6 @@ table.tablesorter tbody tr:nth-child(even) {
 <input type="hidden" name="#file" value="DevPack/DevPack.cfg">
 </form>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.combined.min.js" integrity="sha256-yZK2xfWbDpFuKS9ePpiTtRQlWree+/wtT/xevo8L8WE=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/parsers/parser-metric.min.js" integrity="sha256-nwUWqoc2DYBOTTWF9tSJMiJuE5pNRDKNdlzZTpngPGQ=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/webGui/javascript/jquery.switchbutton.js"></script>
-<script type="text/javascript" src="/plugins/DevPack/js/jquery.DevPack.js"></script>
+<script src="<?=autov('/plugins/DevPack/js/jquery.tablesorter.combined.min.js');?>"></script>
+<script src="<?=autov('/plugins/DevPack/js/parser-metric.min.js');?>"></script><script type="text/javascript" src="<?=autov('/webGui/javascript/jquery.switchbutton.js');?>"></script>
+<script type="text/javascript" src="<?=autov('/plugins/DevPack/js/jquery.DevPack.js');?>"></script>
