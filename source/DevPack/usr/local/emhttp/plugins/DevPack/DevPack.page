@@ -1,6 +1,7 @@
 Icon="code"
 Menu="UserPreferences"
 Title="Dev Pack"
+Tag="code"
 ---
 <link type="text/css" rel="stylesheet" href="<?=autov('/plugins/DevPack/css/tablesorter.css');?>">
 <link type="text/css" rel="stylesheet" href="/plugins/DevPack/css/tablesorter-<?=($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'white' : 'black';?>.css">
